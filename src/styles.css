@@ -5,5 +5,19 @@
 }
 
 body {
-    background-color: #1b004c;
+    background-color: #6e2fe4;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #07b3a8;
+    height: 110px;
+}
+
+#nav-name {
+    margin-left: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 50px;
 }
