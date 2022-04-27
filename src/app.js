@@ -1,26 +1,27 @@
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pageCount = document.getElementById("pages");
+const readInput = document.getElementById("read");
+const subBtn = document.getElementById("sub-btn");
+const cardDisplay = document.getElementById("card");
+
 let library = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
-function addBookToLibrary(title, author, pages, read) {
-  const book = new Book(title, author, pages, read);
+const addBook = (e) => {
+  e.preventDefault(); //to stop form submitting
+
+  let book = {
+    title: document.getElementById("title").value,
+    author: document.getElementById("author").value,
+    pages: document.getElementById("pages").value,
+  };
   library.push(book);
-}
 
-addBookToLibrary("Book1", "by me", 20, true);
-addBookToLibrary("Book2", "by you", 200, false);
+  console.log(library);
+};
 
-function displayBooks() {
-  for (const book of library) {
-    if (book.length === 0) break;
-    console.log(book);
-  }
-}
-displayBooks();
+// On click add book button executes => displayDetails
+subBtn.addEventListener("click", addBook);
 
 // Get the modal
 const modal = document.getElementById("myModal");
@@ -47,3 +48,5 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+console.log(library);
