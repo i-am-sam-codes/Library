@@ -1,27 +1,30 @@
-const titleInput = document.getElementById("title");
-const authorInput = document.getElementById("author");
-const pageCount = document.getElementById("pages");
+const titleInput = document.getElementById("title").value;
+const authorInput = document.getElementById("author").value;
+const pageCount = document.getElementById("pages").value;
 const readInput = document.getElementById("read");
 const subBtn = document.getElementById("sub-btn");
 const cardDisplay = document.getElementById("card");
 
 let library = [];
 
-const addBook = (e) => {
-  e.preventDefault(); //to stop form submitting
+function createBook() {
+  let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let pages = document.getElementById("pages").value;
 
-  let book = {
-    title: document.getElementById("title").value,
-    author: document.getElementById("author").value,
-    pages: document.getElementById("pages").value,
-  };
-  library.push(book);
+  function Book(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
 
+  let newBook = new Book(title, author, pages);
+  library.push(newBook);
+  console.log(newBook);
   console.log(library);
-};
+}
 
-// On click add book button executes => displayDetails
-subBtn.addEventListener("click", addBook);
+subBtn.addEventListener("click", createBook);
 
 // Get the modal
 const modal = document.getElementById("myModal");
@@ -48,5 +51,3 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-
-console.log(library);
