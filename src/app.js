@@ -4,6 +4,7 @@ const pageCount = document.getElementById("pages").value;
 const readInput = document.getElementById("read");
 const subBtn = document.getElementById("sub-btn");
 const cardDisplay = document.getElementById("card");
+const form = document.getElementById("form");
 
 let library = [];
 
@@ -20,10 +21,20 @@ function createBook() {
 
   let newBook = new Book(title, author, pages);
   library.push(newBook);
-  console.log(newBook);
-  console.log(library);
+
+  buildBook();
 }
 
+function buildBook() {
+  const newDiv = document.createElement("div");
+  console.log("add");
+  newDiv.classList.add("new-div");
+  for (let i = 0; i < library.length; i++) {
+    cardDisplay.appendChild(newDiv);
+    newDiv.textContent =
+      library[i].title + " " + library[i].author + " " + library[i].pages;
+  }
+}
 subBtn.addEventListener("click", createBook);
 
 // Get the modal

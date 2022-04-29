@@ -123,6 +123,8 @@ nav {
   width: 200px;
   height: 250px;
   margin: 1rem;
+  font-size: 24px;
+  font-family: sans-serif;
 }
 
 .new-div:hover {
