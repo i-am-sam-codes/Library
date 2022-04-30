@@ -23,16 +23,37 @@ function createBook() {
   library.push(newBook);
 
   buildBook();
+  console.log(newBook);
+  console.log(library);
 }
 
 function buildBook() {
-  const newDiv = document.createElement("div");
-  console.log("add");
-  newDiv.classList.add("new-div");
+  const cardDiv = document.createElement("div");
+  const titleDiv = document.createElement("div");
+  const authorDiv = document.createElement("div");
+  const pagesDiv = document.createElement("div");
+  const removeBtn = document.createElement("button");
+
+  cardDiv.classList.add("new-div");
+  titleDiv.classList.add("new-title");
+  authorDiv.classList.add("new-author");
+  pagesDiv.classList.add("new-pages");
+  removeBtn.classList.add("remove");
+
+  removeBtn.onclick = function () {
+    cardDiv.remove();
+  };
+
   for (let i = 0; i < library.length; i++) {
-    cardDisplay.appendChild(newDiv);
-    newDiv.textContent =
-      library[i].title + " " + library[i].author + " " + library[i].pages;
+    cardDisplay.appendChild(cardDiv);
+    cardDiv.appendChild(titleDiv);
+    cardDiv.appendChild(authorDiv);
+    cardDiv.appendChild(pagesDiv);
+    cardDiv.appendChild(removeBtn);
+    titleDiv.textContent = library[i].title;
+    authorDiv.textContent = library[i].author;
+    pagesDiv.textContent = library[i].pages;
+    removeBtn.textContent = "REMOVE";
   }
 }
 subBtn.addEventListener("click", createBook);
