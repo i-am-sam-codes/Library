@@ -40,10 +40,6 @@ function buildBook() {
   pagesDiv.classList.add("new-pages");
   removeBtn.classList.add("remove");
 
-  removeBtn.onclick = function () {
-    cardDiv.remove();
-  };
-
   for (let i = 0; i < library.length; i++) {
     cardDisplay.appendChild(cardDiv);
     cardDiv.appendChild(titleDiv);
@@ -54,6 +50,10 @@ function buildBook() {
     authorDiv.textContent = library[i].author;
     pagesDiv.textContent = library[i].pages;
     removeBtn.textContent = "REMOVE";
+
+    removeBtn.onclick = function () {
+      cardDiv.remove();
+    };
   }
 }
 subBtn.addEventListener("click", createBook);
