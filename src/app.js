@@ -1,6 +1,3 @@
-const titleInput = document.getElementById("title").value;
-const authorInput = document.getElementById("author").value;
-const pageCount = document.getElementById("pages").value;
 const readInput = document.getElementById("read");
 const subBtn = document.getElementById("sub-btn");
 const cardDisplay = document.getElementById("card");
