@@ -16,34 +16,30 @@
       </div>
     </nav>
 
-    <!-- <div class="buttonContainer"> -->
-    <!-- Trigger/Open The Modal -->
-    <!-- <button id="myBtn">ADD BOOK+</button> -->
-    <!-- </div> -->
+    <form id="form">
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="inputContainer">
+            <p>Enter a new book 👇</p>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required />
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required />
+            <label for="pages">Pages</label>
+            <input type="text" id="pages" name="pages" required />
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="inputContainer">
-          <p>Enter a new book 👇</p>
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" required />
-          <label for="author">Author</label>
-          <input type="text" id="author" name="author" required />
-          <label for="pages">Pages</label>
-          <input type="text" id="pages" name="pages" required />
+            <div class="check-box">
+              <label for="read">Read</label>
+              <input type="checkbox" class="check" id="read" />
+            </div>
 
-          <div class="check-box">
-            <label for="read">Read</label>
-            <input type="checkbox" class="check" id="read" />
+            <button type="submit" class="submit" id="sub-btn">ADD</button>
           </div>
-
-          <button type="submit" class="submit" id="sub-btn">ADD</button>
         </div>
       </div>
-    </div>
+    </form>
 
     <!-- Card Display-->
 
